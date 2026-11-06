@@ -1,0 +1,24 @@
+{
+  "new_seconds": 21.873704407989862,
+  "old_median_seconds": 26.883435661002295,
+  "old_seconds": [
+    24.16046047999407,
+    28.219046972008073,
+    26.883435661002295
+  ],
+  "time_reduction_percent": 18.635011224698705,
+  "speedup": 1.2290298506174617,
+  "time_reduction_vs_old_best_percent": 9.46486957025403,
+  "throughput_MB_s": 592.4177998522583,
+  "cpu_seconds": 220.579316,
+  "old_cpu_seconds": [
+    221.154047,
+    218.633719,
+    222.92552700000002
+  ],
+  "matching_images": 67,
+  "input_resident_before": 1.0,
+  "input_resident_after": 1.0,
+  "binary_sha256": "f0fea5ecbf134ee8a21e737cad02a8ec6e4dfa10b5f96c12e68bdd08029d0aba",
+  "limitation": "One new run versus historical three runs; desktop load and writeback state are not strictly controlled."
+}

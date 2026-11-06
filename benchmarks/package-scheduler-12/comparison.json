@@ -1,0 +1,15 @@
+{
+  "previous_seconds": 21.873704407989862,
+  "current_seconds": 22.480554759007646,
+  "seconds_difference": 0.6068503510177834,
+  "time_increase_percent": 2.7743373490779932,
+  "previous_MB_s": 592.4177998522583,
+  "current_MB_s": 576.425803496142,
+  "previous_cpu_seconds": 220.579316,
+  "current_cpu_seconds": 221.999165,
+  "matching_images": 67,
+  "binary_sha256": "5de8a5c14fda5e640658cbfb9c14e167f9402869d69d911a9d8d4caa8792b8e1",
+  "input_resident_before": 1.0,
+  "input_resident_after": 1.0,
+  "limitation": "Single runs in a desktop environment; difference does not establish a statistically significant regression."
+}

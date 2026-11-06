@@ -1,0 +1,17 @@
+profile extraction: total_wall_s=21.599571 setup_wall_s=0.009021 operations_and_early_verify_wall_s=21.270172 finalization_wall_s=0.320378 verify_worker_s=6.122998
+profile operation: type=REPLACE worker_s=1.209589
+profile operation: type=REPLACE_BZ worker_s=6.678814
+profile operation: type=ZERO worker_s=0.000011
+profile operation: type=REPLACE_XZ worker_s=218.990992
+profile xz: operations=446 allocations=459 allocated_bytes=4786624
+profile xz: operations=441 allocations=452 allocated_bytes=2523856
+profile xz: operations=456 allocations=469 allocated_bytes=3616288
+profile xz: operations=450 allocations=462 allocated_bytes=4266272
+profile xz: operations=470 allocations=482 allocated_bytes=3420640
+profile xz: operations=400 allocations=412 allocated_bytes=3539776
+profile xz: operations=427 allocations=440 allocated_bytes=3772784
+profile xz: operations=449 allocations=466 allocated_bytes=10519696
+profile xz: operations=447 allocations=462 allocated_bytes=6422256
+profile xz: operations=534 allocations=542 allocated_bytes=2192480
+profile xz: operations=532 allocations=540 allocated_bytes=2192256
+profile xz: operations=531 allocations=539 allocated_bytes=2192144

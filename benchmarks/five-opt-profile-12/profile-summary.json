@@ -1,0 +1,6 @@
+{
+  "xz_operations": 5583,
+  "xz_allocator_calls": 5725,
+  "xz_cumulative_allocated_bytes": 49445072,
+  "worker_time_note": "Elapsed per-worker times overlap; not process CPU time."
+}

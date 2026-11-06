@@ -1,0 +1,13 @@
+{
+  "before_seconds": 23.4569614949869,
+  "after_seconds": 22.75487479098956,
+  "time_reduction_percent": 2.9930846079420204,
+  "before_cpu_seconds": 222.05622499999998,
+  "after_cpu_seconds": 217.14613400000002,
+  "before_MB_s": 552.4318161484554,
+  "after_MB_s": 569.476736700447,
+  "matching_images": 67,
+  "before_binary_sha256": "f0fea5ecbf134ee8a21e737cad02a8ec6e4dfa10b5f96c12e68bdd08029d0aba",
+  "after_binary_sha256": "4882a303f0f7a8c355dafc4658982fa850e983fe5c57cd5e2ebe71dee263475f",
+  "limitation": "One contemporaneous run per version, baseline then optimized; not statistically conclusive."
+}

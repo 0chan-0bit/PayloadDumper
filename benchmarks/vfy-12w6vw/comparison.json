@@ -1,0 +1,15 @@
+{
+  "extraction_workers": 12,
+  "verification_workers": 6,
+  "seconds": 22.754242524999427,
+  "previous_seconds": 22.75487479098956,
+  "difference_seconds": -0.0006322659901343286,
+  "time_change_percent": -0.002778595777574999,
+  "throughput_MB_s": 569.4925605966893,
+  "cpu_seconds": 218.124253,
+  "matching_images": 67,
+  "binary_sha256": "1384cb0c9acd9c5516e794337a34dd5d9498099d399f8f7a1a1c4d19ba0289de",
+  "input_resident_before": 1.0,
+  "input_resident_after": 0.9999982844663575,
+  "limitation": "Single run compared to historical single runs; no measurable improvement over previous 22.75s result."
+}

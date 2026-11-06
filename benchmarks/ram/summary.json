@@ -1,0 +1,58 @@
+[
+  {
+    "implementation": "cpp",
+    "workers": 6,
+    "runs": 3,
+    "median_seconds": 35.22431095899083,
+    "min_seconds": 34.46095453899761,
+    "max_seconds": 35.32833239500178,
+    "throughput_MB_s": 367.88148546288147,
+    "median_cpu_seconds": 196.714994,
+    "rss_MiB_range": [
+      19676.703125,
+      21464.609375
+    ]
+  },
+  {
+    "implementation": "go",
+    "workers": 6,
+    "runs": 3,
+    "median_seconds": 63.272892852008226,
+    "min_seconds": 62.67870353699254,
+    "max_seconds": 73.17106496100314,
+    "throughput_MB_s": 204.80131784568331,
+    "median_cpu_seconds": 181.570647,
+    "rss_MiB_range": [
+      67.0703125,
+      71.14453125
+    ]
+  },
+  {
+    "implementation": "cpp",
+    "workers": 12,
+    "runs": 3,
+    "median_seconds": 26.883435661002295,
+    "min_seconds": 24.16046047999407,
+    "max_seconds": 28.219046972008073,
+    "throughput_MB_s": 482.0206763526769,
+    "median_cpu_seconds": 221.154047,
+    "rss_MiB_range": [
+      21468.609375,
+      21518.671875
+    ]
+  },
+  {
+    "implementation": "go",
+    "workers": 12,
+    "runs": 3,
+    "median_seconds": 60.46626967001066,
+    "min_seconds": 60.174893916002475,
+    "max_seconds": 72.77603959001135,
+    "throughput_MB_s": 214.3074462955822,
+    "median_cpu_seconds": 185.05321099999998,
+    "rss_MiB_range": [
+      83.82421875,
+      91.36328125
+    ]
+  }
+]

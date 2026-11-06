@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-07",
+  "cpu": "AMD Ryzen 5 7600, 6C/12T",
+  "cpp_compiler": "GCC 14.2.0",
+  "go_toolchain": "go1.27.0 linux/amd64",
+  "go_commit": "c3a50ba8d784764c06143c1f82971cd81a77f9d6",
+  "liblzma": "5.8.1",
+  "openssl": "3.5.7",
+  "payload_bytes": 9550378792,
+  "output_bytes": 12958371840,
+  "partitions": 67,
+  "operations": {
+    "REPLACE_XZ": 5583,
+    "REPLACE": 350,
+    "ZERO": 193,
+    "REPLACE_BZ": 95
+  },
+  "cpp_binary_sha256": "385a43eab69f0ffd14a19b24d7236864c6fe959ece7f96b8d67add57a63bc57f",
+  "go_binary_sha256": "5ae4df6283520df82c79445bcccd351a4107748811b1fbc58e5eaab24c49541a"
+}
