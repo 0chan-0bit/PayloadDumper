@@ -1,11 +1,19 @@
 # payload-dumper-cpp — high-performance Android OTA payload extractor.
 #
 # Defaults to -march=native because this project is tuned for the machine it
-# is built on. Use `make NATIVE=0` for x86-64-v3, or
-# `make pgo` for a profile-guided build.
+# is built on. Use `make NATIVE=0` for x86-64-v3, `make portable` for a
+# statically linked single-file binary with no runtime shared-library
+# dependencies, or `make pgo` for a profile-guided build.
 
-CXX      ?= g++
-BUILD    ?= build
+CXX            ?= g++
+PORTABLE       ?= 0
+PORTABLE_BUILD ?= build/portable
+
+ifeq ($(PORTABLE),1)
+  BUILD ?= $(PORTABLE_BUILD)
+else
+  BUILD ?= build
+endif
 TARGET   ?= $(BUILD)/payload-dumper
 
 SRCS := $(wildcard src/*.cpp) src/proto/update_metadata.pb.cc
@@ -15,7 +23,12 @@ DEPS := $(OBJS:.o=.d)
 
 WARN     := -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations
 OPT      := -O3 -DNDEBUG
-NATIVE   ?= 1
+
+ifeq ($(PORTABLE),1)
+  NATIVE ?= 0
+else
+  NATIVE ?= 1
+endif
 
 ifeq ($(NATIVE),1)
   ARCH := -march=native -mtune=native
@@ -33,10 +46,15 @@ endif
 CXXFLAGS ?= -std=c++20 $(OPT) $(ARCH) -fno-plt -fno-semantic-interposition \
             -ffunction-sections -fdata-sections $(WARN) $(LTO)
 CPPFLAGS += -Isrc -Isrc/proto
-LDLIBS   := -lprotobuf-lite -lzstd -llzma -lbz2 -lbrotlidec -lz -lcrypto -lpthread
+LDLIBS   := -lprotobuf-lite -lzstd -llzma -lbz2 -lbrotlidec -lbrotlicommon \
+            -lz -lcrypto -lpthread -ldl
 LDFLAGS  += $(LTO) -Wl,--gc-sections -Wl,-O1 -Wl,--as-needed -Wl,-z,relro,-z,now
 
-.PHONY: all clean test bench pgo gui
+ifeq ($(PORTABLE),1)
+  LDFLAGS += -static
+endif
+
+.PHONY: all clean test bench pgo gui portable
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
@@ -71,3 +89,6 @@ pgo:
 
 gui: $(TARGET)
 	PD_BIN="$(abspath $(TARGET))" ./ui/payload-dumper-gui
+
+portable:
+	$(MAKE) BUILD=$(PORTABLE_BUILD) PORTABLE=1

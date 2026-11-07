@@ -45,7 +45,7 @@ Then:
 ```sh
 make -j"$(nproc)"                               # native release -> build/payload-dumper
 make BUILD=build/release -j"$(nproc)"           # isolated native release build
-make BUILD=build/portable NATIVE=0 -j"$(nproc)" # x86-64-v3, generic tuning
+make portable -j"$(nproc)"                      # static single-file -> build/portable/payload-dumper
 make BUILD=build/debug DEBUG=1 -j"$(nproc)"     # -O1 -g, no LTO
 ```
 
@@ -54,7 +54,16 @@ isolated release binary is `build/release/payload-dumper`; it is dynamically
 linked and targets the build machine's CPU. `NATIVE=0` selects x86-64-v3,
 which still requires compatible hardware and runtime libraries. Use separate
 `BUILD` directories when changing compiler flags: make does not track flag
-changes as dependencies. `PORTABLE=1` is not a supported build variable.
+changes as dependencies.
+
+`make portable` (equivalent to `make PORTABLE=1`) builds a statically linked,
+single-file executable at `build/portable/payload-dumper`: protobuf-lite,
+zstd, liblzma, bzip2, brotli, zlib and OpenSSL are linked into the binary, so
+`ldd` reports "not a dynamic executable". It defaults to `NATIVE=0`
+(x86-64-v3); pass `NATIVE=1` for a static build tuned to the build host. The
+result is self-contained for Linux (static glibc) but remains CPU-dependent
+on x86-64-v3 unless rebuilt. Use `PORTABLE_BUILD=DIR` to choose another output
+directory.
 
 `protoc` is only needed to regenerate `src/proto/update_metadata.pb.{h,cc}`;
 the generated sources are already in the tree.
