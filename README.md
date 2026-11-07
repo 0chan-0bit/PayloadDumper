@@ -31,6 +31,27 @@ payload-dumper [options] payload.bin|ota.zip
 Not implemented (same limitation as the Go reference): `PUFFDIFF`,
 `ZUCCHINI`, `LZ4DIFF_BSDIFF`, `LZ4DIFF_PUFFDIFF`.
 
+## Download (portable Linux build)
+
+A statically linked single-file build for Linux x86-64 is published on the
+[Releases](https://github.com/0chan-0bit/PayloadDumper/releases/latest) page:
+
+- [`payload-dumper-portable-v1.0.tar.xz`](https://github.com/0chan-0bit/PayloadDumper/releases/download/portable/payload-dumper-portable-v1.0.tar.xz)
+  (2.9 MB, SHA-256
+  `25be88737513bbaf70bd955e8a0b550102dbd3de4a2fd62ddb48cc51bad9fa2c`)
+- Contains a single `payload-dumper-portable` executable; no runtime shared
+  libraries are required (`ldd` reports "not a dynamic executable").
+
+```sh
+curl -LO https://github.com/0chan-0bit/PayloadDumper/releases/download/portable/payload-dumper-portable-v1.0.tar.xz
+echo "25be88737513bbaf70bd955e8a0b550102dbd3de4a2fd62ddb48cc51bad9fa2c  payload-dumper-portable-v1.0.tar.xz" | sha256sum -c -
+tar -xJf payload-dumper-portable-v1.0.tar.xz
+./payload-dumper-portable -l payload.bin
+```
+
+The released binary targets the x86-64-v3 baseline. See [Build](#build) to
+rebuild it for another CPU or to create the portable binary locally.
+
 ## Build
 
 Dependencies (Debian/Ubuntu package names):
